@@ -25,6 +25,14 @@ public class Delivery implements Iterable<Package> {
 
 	public void add(Package aPackage) {
 		// TODO implement method
+		if(packagesByAddress.containsKey(aPackage.getAddress())){
+			packagesByAddress.get(aPackage.getAddress()).add(aPackage);
+		}
+
+		Set<Package> set = new HashSet<>();
+		set.add(aPackage);
+		packagesByAddress.put(aPackage.getAddress(), set);
+
 	}
 
 	@Override
@@ -33,6 +41,20 @@ public class Delivery implements Iterable<Package> {
 	}
 
 	// TODO: implement iterator
+	@Override
+	public Iterator<Package> iterator() {
+		return new Iterator<>() {
+			@Override
+			public boolean hasNext() {
+				return false;
+			}
+
+			@Override
+			public Package next() {
+				return null;
+			}
+		};
+	}
 
 
 
@@ -49,18 +71,4 @@ public class Delivery implements Iterable<Package> {
 		delivery.add(new Package("Antarcticplace 123", "Penguroad 1", 6));
 	}
 
-	@Override
-	public Iterator<Package> iterator() {
-		return new Iterator<>() {
-			@Override
-			public boolean hasNext() {
-				return false;
-			}
-
-			@Override
-			public Package next() {
-				return null;
-			}
-		};
-	}
 }
