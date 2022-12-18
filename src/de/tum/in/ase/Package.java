@@ -63,9 +63,13 @@ public class Package implements Comparable<Package> {
 	@Override
 	public int compareTo(Package o) {
 
+		if(weight > o.weight){
+			return -1;
+		} else if (weight < o.weight) {
+			return 1;
+		} else {
+			return 0;
+		}
 
-
-
-		return 0;
 	}
 }
