@@ -25,13 +25,13 @@ public class Delivery implements Iterable<Package> {
 
 	public void add(Package aPackage) {
 		// TODO implement method
-		if(packagesByAddress.containsKey(aPackage.getAddress())){
+		if(packagesByAddress.containsKey(aPackage.getAddress())) {
 			packagesByAddress.get(aPackage.getAddress()).add(aPackage);
 		}
 
-		Set<Package> set = new HashSet<>();
+		/*Set<Package> set = new HashSet<>();
 		set.add(aPackage);
-		packagesByAddress.put(aPackage.getAddress(), set);
+		packagesByAddress.put(aPackage.getAddress(), set);*/
 
 	}
 
