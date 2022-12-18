@@ -29,9 +29,9 @@ public class Delivery implements Iterable<Package> {
 			packagesByAddress.get(aPackage.getAddress()).add(aPackage);
 		}
 
-		/*Set<Package> set = new HashSet<>();
+		Set<Package> set = new HashSet<>();
 		set.add(aPackage);
-		packagesByAddress.put(aPackage.getAddress(), set);*/
+		packagesByAddress.put(aPackage.getAddress(), set);
 
 	}
 
