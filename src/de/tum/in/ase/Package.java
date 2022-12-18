@@ -2,7 +2,7 @@ package de.tum.in.ase;
 
 import java.util.Objects;
 
-public class Package {
+public class Package implements Comparable<Package> {
 	private String sender;
 	private String address;
 	private double weight;
@@ -58,5 +58,14 @@ public class Package {
 	@Override
 	public int hashCode() {
 		return Objects.hash(sender, address, weight);
+	}
+
+	@Override
+	public int compareTo(Package o) {
+
+
+
+
+		return 0;
 	}
 }

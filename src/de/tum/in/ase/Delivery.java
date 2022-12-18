@@ -3,7 +3,7 @@ package de.tum.in.ase;
 import java.util.*;
 
 // TODO: implement interface
-public class Delivery {
+public class Delivery implements Iterable<Package> {
 
 	private final String address;
 	private final Map<String, Set<Package>> packagesByAddress;
@@ -35,6 +35,7 @@ public class Delivery {
 	// TODO: implement iterator
 
 
+
 	public static void main(String[] args) {
 		// TODO test your code:
 		Delivery delivery = new Delivery("Deliveryplace 1");
@@ -46,5 +47,20 @@ public class Delivery {
 		delivery.add(new Package("Penguinway 6", "Tierpark Hellabrunn, Tierparkstr. 30", 1));
 		delivery.add(new Package("Tierpark Hellabrunn, Tierparkstr. 30", "Penguinway 6", 0.3));
 		delivery.add(new Package("Antarcticplace 123", "Penguroad 1", 6));
+	}
+
+	@Override
+	public Iterator<Package> iterator() {
+		return new Iterator<>() {
+			@Override
+			public boolean hasNext() {
+				return false;
+			}
+
+			@Override
+			public Package next() {
+				return null;
+			}
+		};
 	}
 }
