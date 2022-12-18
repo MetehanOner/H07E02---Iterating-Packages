@@ -27,11 +27,11 @@ public class Delivery implements Iterable<Package> {
 		// TODO implement method
 		if(packagesByAddress.containsKey(aPackage.getAddress())) {
 			packagesByAddress.get(aPackage.getAddress()).add(aPackage);
+		} else {
+			Set<Package> set = new HashSet<>();
+			set.add(aPackage);
+			packagesByAddress.put(aPackage.getAddress(), set);
 		}
-
-		Set<Package> set = new HashSet<>();
-		set.add(aPackage);
-		packagesByAddress.put(aPackage.getAddress(), set);
 
 	}
 
